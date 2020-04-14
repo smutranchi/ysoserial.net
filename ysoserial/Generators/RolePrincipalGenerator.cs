@@ -9,7 +9,7 @@ namespace ysoserial.Generators
     {
         public override List<string> SupportedFormatters()
         {
-            return new List<string> { "BinaryFormatter", "Json.Net", "DataContractSerializer", "NetDataContractSerializer", "SoapFormatter", "LosFormatter", "ObjectStateFormatter" };
+            return new List<string> { "BinaryFormatter", "Json.Net", "DataContractSerializer", "NetDataContractSerializer", "SoapFormatter", "LosFormatter" };
         }
 
         public override string Name()
@@ -37,7 +37,6 @@ namespace ysoserial.Generators
             
             if (formatter.Equals("binaryformatter", StringComparison.OrdinalIgnoreCase)
                 || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase)
-                || formatter.Equals("objectstateformatter", StringComparison.OrdinalIgnoreCase)
                 || formatter.Equals("SoapFormatter", StringComparison.OrdinalIgnoreCase))
             {
                 return Serialize(payloadClaimsPrincipalMarshal, formatter, inputArgs);

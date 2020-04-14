@@ -30,7 +30,7 @@ namespace ysoserial.Generators
 
         public override List<string> SupportedFormatters()
         {
-            return new List<string> { "BinaryFormatter (3)", "Json.Net (2)", "DataContractSerializer (2)", "NetDataContractSerializer (3)", "SoapFormatter (2)", "LosFormatter (3)", "ObjectStateFormatter (3)" };
+            return new List<string> { "BinaryFormatter (3)", "Json.Net (2)", "DataContractSerializer (2)", "NetDataContractSerializer (3)", "SoapFormatter (2)", "LosFormatter (3)" };
         }
 
         public override string Name()
@@ -55,8 +55,7 @@ namespace ysoserial.Generators
             string b64encoded = Convert.ToBase64String(binaryFormatterPayload);
 
             if (formatter.Equals("binaryformatter", StringComparison.OrdinalIgnoreCase)
-                || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase)
-                || formatter.Equals("objectstateformatter", StringComparison.OrdinalIgnoreCase))
+                || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase))
             {
                 Object obj = null;
 

